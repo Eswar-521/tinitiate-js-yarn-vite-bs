@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -41,6 +42,12 @@ const Login = () => {
             Login
           </Button>
         </Form>
+        <div className="text-center mt-3">
+          <Link to="/forgot-password">Forgot Password?</Link>
+        </div>
+        <div className="text-center mt-2">
+          <Link to="/">Go back to Home</Link>
+        </div>
       </Card.Body>
     </Card>
   );

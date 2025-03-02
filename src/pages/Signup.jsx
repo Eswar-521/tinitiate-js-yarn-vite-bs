@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -53,6 +54,12 @@ const Signup = () => {
             Signup
           </Button>
         </Form>
+        <div className="text-center mt-3">
+          <Link to="/login">Already have an account? Login</Link>
+        </div>
+        <div className="text-center mt-2">
+          <Link to="/">Go back to Home</Link>
+        </div>
       </Card.Body>
     </Card>
   );
