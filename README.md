@@ -6,3 +6,4 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 # Tinitiate JS YARN VITE Bootstrap
+* [Project Setup](project-setup.md)
