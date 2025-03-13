@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 * [Project Setup](project-setup.md)
 
 ## Showcase Items
-* Home Page
+* [Home Page](google.com)
 * Catalog page
 * Comparision Table
 * Services page
