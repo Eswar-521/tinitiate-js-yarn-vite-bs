@@ -7,3 +7,22 @@ Currently, two official plugins are available:
 
 # Tinitiate JS YARN VITE Bootstrap
 * [Project Setup](project-setup.md)
+
+## Showcase Items
+* Home Page
+* Catalog page
+* Comparision Table
+* Services page
+* Article Home
+* Article Page
+* Menus
+  * Right Menu
+  * Left Menu
+  * Header Menu
+  * Footer Menu
+* Headers
+* Footers
+* Login
+* Reset / Forgot password
+* Search Results
+* Dashboard Page
