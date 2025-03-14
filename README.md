@@ -1,28 +1,37 @@
-# React + Vite
+## JS Yarn Vite Bootstrap Project (`js-yarn-vite-bs`)
+### Project Creation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-Currently, two official plugins are available:
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```sh
+# Create a new Vite project with React template using Yarn
+yarn create vite js-yarn-vite-bs 
 
-# Tinitiate JS YARN VITE Bootstrap
-* [Project Setup](project-setup.md)
+# Navigate to the project directory
+cd js-yarn-vite-bs
+```
 
-## Showcase Items
-* [Home Page](https://www.google.com)
-* Catalog page
-* Comparision Table
-* Services page
-* Article Home
-* Article Page
-* Menus
-  * Right Menu
-  * Left Menu
-  * Header Menu
-  * Footer Menu
-* Headers
-* Footers
-* Login
-* Reset / Forgot password
-* Search Results
-* Dashboard Page
+### Installing Dependencies
+
+```sh
+# Install necessary dependencies
+yarn install
+
+# Install Bootstrap for styling
+yarn add bootstrap
+
+# Install React Router for navigation (if needed)
+yarn add react-router-dom
+```
+
+### Adding Bootstrap
+
+### Import Bootstrap CSS in `main.jsx`:
+
+```jsx
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+### Running the Project
+
+```sh
+yarn dev
+```
