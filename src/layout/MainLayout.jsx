@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 const MainLayout = ({ children }) => {
   return (
-    <Container fluid className="d-flex flex-column vh-100">
+    <Container fluid className="d-flex flex-column min-vh-100 p-0">
       {/* Header */}
       <Row>
         <Col className="p-0">
@@ -15,27 +15,27 @@ const MainLayout = ({ children }) => {
         </Col>
       </Row>
 
-      {/* Main Content */}
+      {/* Main Section */}
       <Row className="flex-grow-1">
         {/* Left Sidebar */}
         <Col
           md={3}
-          className="d-flex flex-column"
-          style={{ minHeight: "100vh", backgroundColor: "transparent", borderRight: "none" }}
+          className="p-3 d-none d-md-block overflow-auto"
+          style={{ backgroundColor: "#f8f9fa", borderRight: "1px solid #dee2e6" }}
         >
           <LeftSidebar />
         </Col>
 
-        {/* Main Content Area */}
-        <Col md={6} className="p-3">
+        {/* Main Content */}
+        <Col xs={12} md={6} className="p-4 bg-white overflow-auto">
           {children}
         </Col>
 
         {/* Right Sidebar */}
         <Col
           md={3}
-          className="p-3 d-flex flex-column"
-          style={{ backgroundColor: "transparent", borderLeft: "none" }}
+          className="p-3 d-none d-md-block overflow-auto"
+          style={{ backgroundColor: "#f8f9fa", borderLeft: "1px solid #dee2e6" }}
         >
           <RightSidebar />
         </Col>
