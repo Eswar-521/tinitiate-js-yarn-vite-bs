@@ -8,7 +8,7 @@ const RightSidebar = () => {
       className="d-flex flex-column justify-content-start"
       style={{
         height: "100vh",
-        background: "linear-gradient(to bottom, #e0f7fa, #b2ebf2)",
+        background: "linear-gradient(to bottom,rgb(35, 174, 192),rgb(207, 125, 188))",
         padding: "20px",
         borderLeft: "2px solid #00796b",
         boxShadow: "inset 0 0 10px rgba(0,0,0,0.05)",
@@ -27,12 +27,10 @@ const RightSidebar = () => {
 
       <ListGroup variant="flush">
         {[
-          { path: "/login", label: "🔑 Login", color: "#007bff" },
-          { path: "/signup", label: "📝 Signup", color: "#00796b" },
-          { path: "/about1", label: "📘 About1", color: "#0288d1" },
-          { path: "/contact1", label: "☎️ Contact1", color: "#0288d1" },
-          { path: "/help", label: "❓ Help", color: "#0288d1" },
-          { path: "/services1", label: "🛠 Services", color: "#0288d1" },
+          { path: "/notifications", label: "🔔 Notifications", color: "#ffa726" },
+          { path: "/messages", label: "💬 Messages", color: "#29b6f6" },
+          { path: "/settings", label: "⚙️ Settings", color: "#66bb6a" },
+          { path: "/support", label: "🆘 Support", color: "#ef5350" },
         ].map((item, idx) => (
           <ListGroup.Item
             key={idx}

@@ -1,56 +1,137 @@
-import React, { useState } from 'react';
-import { Form, Button, Card } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const LoginPage = () => {
+  useEffect(() => {
+    const icons = document.querySelectorAll(".bg-icon");
+    icons.forEach((icon, i) => {
+      icon.animate(
+        [
+          { transform: "translateY(0)" },
+          { transform: "translateY(-20px)" },
+          { transform: "translateY(0)" },
+        ],
+        {
+          duration: 4000 + i * 300,
+          iterations: Infinity,
+          direction: "alternate",
+        }
+      );
+    });
+  }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Logged in with ${email}`);
-  };
+  const floatingEmojis = ["🔒", "📘", "🌟", "⚙️", "📱", "💡", "🛡️", "🧠", "🧩", "💾"];
 
   return (
-    <Card className="mx-auto" style={{ width: '400px', padding: '20px' }}>
-      <Card.Body>
-        <h2 className="text-center">Login</h2>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control 
-              type="email" 
-              placeholder="Enter email" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)} 
-              required 
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control 
-              type="password" 
-              placeholder="Enter password" 
-              value={password}
-              onChange={(e) => setPassword(e.target.value)} 
-              required 
-            />
-          </Form.Group>
-
-          <Button variant="primary" type="submit" className="w-100">
-            Login
-          </Button>
-        </Form>
-        <div className="text-center mt-3">
-          <Link to="/forgot-password">Forgot Password?</Link>
+    <div
+      style={{
+        position: "relative",
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #1e3c72, #2a5298)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        overflow: "hidden",
+        fontFamily: "Segoe UI, sans-serif",
+      }}
+    >
+      {/* Background floating icons */}
+      {Array.from({ length: 20 }).map((_, i) => (
+        <div
+          key={i}
+          className="bg-icon"
+          style={{
+            position: "absolute",
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            fontSize: `${20 + Math.random() * 40}px`,
+            opacity: 0.08 + Math.random() * 0.2,
+            color: "#ffffff",
+            zIndex: 1,
+            animation: "floatIcon 8s ease-in-out infinite",
+            userSelect: "none",
+          }}
+        >
+          {floatingEmojis[i % floatingEmojis.length]}
         </div>
-        <div className="text-center mt-2">
-          <Link to="/">Go back to Home</Link>
-        </div>
-      </Card.Body>
-    </Card>
+      ))}
+
+      {/* Login card */}
+      <div
+        className="shadow p-4 rounded"
+        style={{
+          width: "100%",
+          maxWidth: "400px",
+          backdropFilter: "blur(10px)",
+          backgroundColor: "rgba(255, 255, 255, 0.05)",
+          border: "1px solid rgba(255, 255, 255, 0.15)",
+          zIndex: 2,
+          animation: "fadeIn 1s ease-in-out",
+          color: "#fff",
+        }}
+      >
+        <h3 className="text-center mb-4 fw-bold">🔐 Login</h3>
+        <form>
+          <div className="mb-3">
+            <label>Email</label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Enter your email"
+              style={{
+                background: "rgba(255,255,255,0.2)",
+                border: "none",
+                color: "#fff",
+              }}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter your password"
+              style={{
+                background: "rgba(255,255,255,0.2)",
+                border: "none",
+                color: "#fff",
+              }}
+              required
+            />
+          </div>
+          <button className="btn btn-light w-100 fw-semibold">Login</button>
+        </form>
+        <p className="text-center mt-3" style={{ fontSize: "0.9rem", color: "#ddd" }}>
+          Don't have an account? <a href="#" style={{ color: "#fff" }}>Sign up</a>
+        </p>
+      </div>
+
+      {/* Keyframes */}
+      <style>
+        {`
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+
+          @keyframes floatIcon {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+          }
+
+          input::placeholder {
+            color: #eee;
+          }
+
+          label {
+            color: #fff;
+          }
+        `}
+      </style>
+    </div>
   );
 };
 
-export default Login;
+export default LoginPage;

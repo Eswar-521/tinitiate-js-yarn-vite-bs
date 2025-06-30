@@ -12,6 +12,7 @@ import MainLayout from "./layout/MainLayout";
 
 // ✅ Core Pages
 import Home from "./pages/Main/Home";
+import Home1 from "./pages/Subpages/Home1";
 import About from "./pages/Subpages/About";
 import Contact from "./pages/Subpages/Contact";
 import Services from "./pages/Subpages/Services";
@@ -22,14 +23,18 @@ import Profile from "./pages/Subpages/Profile";
 
 import Dashboard from "./pages/Subpages/Dashboard";
 import Analytics from "./pages/Subpages/Analytics";
-import Security from "./pages/Subpages/Security";
+import Security from "./pages/Subpages/SecurityPage";
 import Comparison from "./pages/Subpages/comparison";
 
-// ✅ Extra Pages
-import About1 from "./pages/ExtraPages/About1";
-import Services1 from "./pages/ExtraPages/Services1";
-import Contact1 from "./pages/ExtraPages/Contact1";
-import Help from "./pages/ExtraPages/Help";
+import Notifications from "./pages/Subpages/Notifications";
+import Messages from "./pages/Subpages/Messages";
+import Settings from "./pages/Subpages/Settings";
+import Support from "./pages/Subpages/Support";
+
+import About1 from "./pages/SubPages/About1";
+import Services1 from "./pages/SubPages/Services1";
+import Contact1 from "./pages/SubPages/Contact1";
+import Help from "./pages/SubPages/Help";
 
 const App = () => {
   return (
@@ -40,6 +45,7 @@ const App = () => {
         <MainLayout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/Home1" element={<Home1/>}/>
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
@@ -58,6 +64,13 @@ const App = () => {
             <Route path="/contact1" element={<Contact1 />} />
             <Route path="/help" element={<Help />} />
             <Route path="/services1" element={<Services1 />} />
+
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/Support" element={<Support />} />
+
+
           </Routes>
         </MainLayout>
       </Router>

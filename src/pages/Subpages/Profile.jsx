@@ -1,169 +1,153 @@
-import React from "react";
-import { Camera, Mail, Phone, User, BookOpen, CheckCircle } from "lucide-react";
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Profile = () => {
-  const containerStyle = {
-    minHeight: "100vh",
-    background: "linear-gradient(to bottom right, #6366F1, #3B82F6)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "24px",
+const ProfilePage = () => {
+  const initialProfile = {
+    name: "Keishna Reddy",
+    email: "keishna@example.com",
+    title: "Full Stack Developer",
+    location: "Hyderabad, India",
+    bio: "Passionate about building interactive maps and modern web applications. Love React, Node.js, and clean UI.",
+    avatar: "https://i.pravatar.cc/150?img=3",
   };
 
-  const cardStyle = {
-    width: "100%",
-    maxWidth: "400px",
-    backgroundColor: "white",
-    borderRadius: "20px",
-    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-    overflow: "hidden",
-    animation: "fadeInUp 0.7s ease",
+  const [profile, setProfile] = useState(initialProfile);
+  const [editMode, setEditMode] = useState(false);
+
+  const handleChange = (e) => {
+    setProfile({ ...profile, [e.target.name]: e.target.value });
   };
 
-  const bannerStyle = {
-    height: "112px",
-    background: "linear-gradient(to right, #1D4ED8, #7C3AED)",
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  };
-
-  const profileImgWrapper = {
-    position: "absolute",
-    bottom: "-40px",
-    textAlign: "center",
-  };
-
-  const profileImg = {
-    width: "96px",
-    height: "96px",
-    borderRadius: "50%",
-    border: "4px solid white",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-  };
-
-  const cameraLabel = {
-    position: "absolute",
-    bottom: "0px",
-    right: "0px",
-    backgroundColor: "#333",
-    padding: "4px",
-    borderRadius: "50%",
-    cursor: "pointer",
-  };
-
-  const userInfoStyle = {
-    paddingTop: "56px",
-    paddingBottom: "24px",
-    textAlign: "center",
-    paddingInline: "16px",
-  };
-
-  const contactStyle = {
-    padding: "0 24px 24px",
-    color: "#374151",
-  };
-
-  const sectionTitle = {
-    fontWeight: "bold",
-    marginBottom: "8px",
-    fontSize: "16px",
-    display: "flex",
-    alignItems: "center",
-    color: "#111827",
-  };
-
-  const courseCard = {
-    backgroundColor: "#F3F4F6",
-    borderRadius: "10px",
-    padding: "12px",
-    marginBottom: "10px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+  const handleSave = () => {
+    setEditMode(false);
+    // You can send `profile` to a backend here if needed
+    alert("Profile saved!");
   };
 
   return (
-    <div style={containerStyle}>
-      <div style={cardStyle}>
-        {/* Banner */}
-        <div style={bannerStyle}>
-          <div style={profileImgWrapper}>
-            <div style={{ position: "relative" }}>
-              <img
-                src="https://via.placeholder.com/100"
-                alt="Profile"
-                style={profileImg}
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        padding: "40px 20px",
+        fontFamily: "Segoe UI, sans-serif",
+        color: "#fff",
+      }}
+    >
+      <div
+        className="container"
+        style={{
+          maxWidth: "800px",
+          background: "rgba(255, 255, 255, 0.05)",
+          borderRadius: "20px",
+          backdropFilter: "blur(10px)",
+          boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
+          padding: "30px",
+        }}
+      >
+        {/* Header */}
+        <div className="text-center mb-4">
+          <img
+            src={profile.avatar}
+            alt="Avatar"
+            style={{
+              width: "120px",
+              height: "120px",
+              borderRadius: "50%",
+              border: "4px solid #fff",
+              objectFit: "cover",
+              boxShadow: "0 0 20px rgba(255,255,255,0.3)",
+              animation: "fadeIn 1.2s ease",
+            }}
+          />
+          {editMode ? (
+            <input
+              type="text"
+              name="name"
+              value={profile.name}
+              onChange={handleChange}
+              className="form-control mt-3 text-center"
+              style={{ maxWidth: "300px", margin: "auto" }}
+            />
+          ) : (
+            <h2 className="mt-3 fw-bold">{profile.name}</h2>
+          )}
+          <p className="text-light mb-1">{profile.title}</p>
+          <p className="text-light small">{profile.location}</p>
+          <button
+            className="btn btn-outline-light mt-3"
+            onClick={() => (editMode ? handleSave() : setEditMode(true))}
+          >
+            {editMode ? "Save Changes" : "Edit Profile"}
+          </button>
+        </div>
+
+        {/* Stats */}
+        <div className="row text-center text-light mb-4">
+          <div className="col-4">
+            <h5 className="fw-bold">12</h5>
+            <p className="small">Projects</p>
+          </div>
+          <div className="col-4">
+            <h5 className="fw-bold">48</h5>
+            <p className="small">Tasks</p>
+          </div>
+          <div className="col-4">
+            <h5 className="fw-bold">92%</h5>
+            <p className="small">Success Rate</p>
+          </div>
+        </div>
+
+        {/* Editable Info */}
+        <div className="bg-light text-dark rounded p-4 shadow-sm">
+          <h5 className="fw-bold mb-3">About</h5>
+          {editMode ? (
+            <>
+              <textarea
+                name="bio"
+                value={profile.bio}
+                onChange={handleChange}
+                className="form-control mb-3"
+                rows={3}
               />
-              <label style={cameraLabel}>
-                <Camera color="white" size={16} />
-                <input type="file" style={{ display: "none" }} />
-              </label>
-            </div>
-          </div>
-        </div>
-
-        {/* User Info */}
-        <div style={userInfoStyle}>
-          <h2 style={{ fontSize: "20px", fontWeight: "bold", color: "#1F2937" }}>
-            John Doe
-          </h2>
-          <p style={{ fontSize: "14px", color: "#6B7280" }}>Full Stack Developer</p>
-        </div>
-
-        {/* Contact and Courses */}
-        <div style={contactStyle}>
-          <div style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
-            <User size={18} color="#3B82F6" style={{ marginRight: "8px" }} />
-            <span>John Doe</span>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
-            <Mail size={18} color="#3B82F6" style={{ marginRight: "8px" }} />
-            <span>john.doe@example.com</span>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
-            <Phone size={18} color="#3B82F6" style={{ marginRight: "8px" }} />
-            <span>+91 9876543210</span>
-          </div>
-
-          <div style={{ marginTop: "20px" }}>
-            <div style={sectionTitle}>
-              <BookOpen size={20} color="#7C3AED" style={{ marginRight: "8px" }} />
-              Enrolled Courses
-            </div>
-            <div>
-              <div style={courseCard}>
-                <span>React Development</span>
-                <CheckCircle color="#10B981" size={18} />
-              </div>
-              <div style={courseCard}>
-                <span>Node.js Backend</span>
-                <CheckCircle color="#10B981" size={18} />
-              </div>
-              <div style={courseCard}>
-                <span>UI/UX Design</span>
-                <CheckCircle color="#FBBF24" size={18} />
-              </div>
-            </div>
-          </div>
+              <input
+                type="email"
+                name="email"
+                value={profile.email}
+                onChange={handleChange}
+                className="form-control mb-3"
+                placeholder="Email"
+              />
+              <input
+                type="text"
+                name="location"
+                value={profile.location}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Location"
+              />
+            </>
+          ) : (
+            <>
+              <p>{profile.bio}</p>
+              <hr />
+              <p>
+                <strong>Email:</strong> {profile.email}
+              </p>
+              <p>
+                <strong>Location:</strong> {profile.location}
+              </p>
+            </>
+          )}
         </div>
       </div>
 
-      {/* Inline CSS Animation */}
+      {/* Animations */}
       <style>
         {`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
+          @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
           }
         `}
       </style>
@@ -171,4 +155,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;
