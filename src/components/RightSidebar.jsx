@@ -7,7 +7,7 @@ const RightSidebar = () => {
     <div
       className="d-flex flex-column justify-content-start"
       style={{
-        height: "100vh",
+        height: "200vh",
         background: "linear-gradient(to bottom,rgb(35, 174, 192),rgb(207, 125, 188))",
         padding: "20px",
         borderLeft: "2px solid #00796b",

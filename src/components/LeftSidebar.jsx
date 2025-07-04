@@ -3,48 +3,31 @@ import { Link, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 
 const navLinks = [
-  {
-    path: "/",
-    label: "🏠 Home",
-    subRoutes: [
-      { path: "/Home1", label: "🏠 Home1" }
-    ]
-  },
-  {
-    path: "/about",
-    label: "ℹ️ About",
-    subRoutes: [
-      { path: "/about1", label: "ℹ️ About1" }
-    ]
-  },
-  {
-    path: "/services",
-    label: "🛠 Services",
-    subRoutes: [
-      { path: "/services1", label: "🛠 Services1" }
-    ]
-  },
-  {
-    path: "/contact",
-    label: "📞 Contact",
-    subRoutes: [
-      { path: "/contact1", label: "📞 Contact1" }
-    ]
-  },
-  {
-    path: "/catalog",
-    label: "📚 Catalog",
-    subRoutes: [
-      { path: "/comparison", label: "🔍 Comparison" }
-    ]
-  },
-  { path: "/dashboard", label: "📊 Dashboard" },
-  { path: "/analytics", label: "📈 Analytics" },
-  { path: "/security", label: "🔒 Security" },
+  { path: "/", label: "🏠 Home", subRoutes: [{ path: "/Home1", label: "🏠 Home1" }] },
   { path: "/profile", label: "👤 Profile" },
   { path: "/login", label: "🔑 Login" },
   { path: "/signup", label: "📝 Signup" },
-  { path: "/help", label: "❓ Help" },
+  { path: "/catalog", label: "📚 Catalog" },
+  { path: "/services", label: "🛠 Services", subRoutes: [{ path: "/services1", label: "🛠 Services1" }] },
+  { path: "/search", label: "🔍 Search" },
+  { path: "/comparison", label: "📊 Comparison" },
+  { path: "/comparisontable", label: "📑 Comparison Table" },
+  { path: "/forms", label: "📝 Forms" },
+  { path: "/datatable", label: "📋 Data Table" },
+  { path: "/infographics", label: "📈 Infographics" },
+  { path: "/audio", label: "🎵 Audio" },
+  { path: "/video", label: "🎬 Video" },
+  { path: "/animation", label: "🎞️ Animation" },
+  { path: "/dragdrop", label: "🖱️ Drag & Drop" },
+  { path: "/editor", label: "✏️ Online Editor" },
+  { path: "/shoppingcart", label: "🛒 Shopping Cart" },
+  { path: "/calendar", label: "📅 Calendar" },
+  { path: "/dashboard", label: "📊 Dashboard" },
+  { path: "/analytics", label: "📈 Analytics" },
+  { path: "/security", label: "🔒 Security" },
+  { path: "/about", label: "ℹ️ About", subRoutes: [{ path: "/about1", label: "ℹ️ About1" }] },
+  { path: "/contact", label: "📞 Contact", subRoutes: [{ path: "/contact1", label: "📞 Contact1" }] },
+  { path: "/help", label: "❓ Help" }
 ];
 
 const LeftSidebar = () => {
@@ -68,7 +51,7 @@ const LeftSidebar = () => {
     <div
       className="p-2"
       style={{
-        height: "100vh",
+        height: "200vh",
         width:"300px",
         background: "linear-gradient(135deg,rgb(73, 186, 211) 0%,rgb(149, 23, 151) 100%)",
         color: "white",

@@ -36,6 +36,20 @@ import Services1 from "./pages/SubPages/Services1";
 import Contact1 from "./pages/SubPages/Contact1";
 import Help from "./pages/SubPages/Help";
 
+import Search from "./pages/Subpages/Search";
+import ComparisonTable from "./pages/Subpages/ComparisonTable";
+import Forms from "./pages/Subpages/Forms";
+import DataTable from "./pages/Subpages/DataTable";
+import Infographics from "./pages/Subpages/Infographics";
+import Audio from "./pages/Subpages/Audio";
+import Video from "./pages/Subpages/Video";
+import Animation from "./pages/Subpages/Animation";
+import DragDrop from "./pages/Subpages/DragDrop";
+import Editor from "./pages/Subpages/Editor";
+import ShoppingCart from "./pages/Subpages/ShoppingCart";
+import Calendar from "./pages/Subpages/Calendar";
+
+
 const App = () => {
   return (
     <ThemeProvider>
@@ -68,9 +82,24 @@ const App = () => {
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/messages" element={<Messages />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="/Support" element={<Support />} />
+            <Route path="/support" element={<Support />} />
+             
+            <Route path="/search" element={<Search />} />
+            <Route path="/comparison" element={<Comparison />} />
+            <Route path="/comparisontable" element={<ComparisonTable />} />
+            <Route path="/forms" element={<Forms />} />
+            <Route path="/datatable" element={<DataTable />} />
+            <Route path="/infographics" element={<Infographics />} />
+            <Route path="/audio" element={<Audio />} />
+            <Route path="/video" element={<Video />} />
+            <Route path="/animation" element={<Animation />} />
+            <Route path="/dragdrop" element={<DragDrop />} />
+            <Route path="/editor" element={<Editor />} />
+            <Route path="/shoppingcart" element={<ShoppingCart />} />
+            <Route path="/calendar" element={<Calendar />} />
 
 
+            
           </Routes>
         </MainLayout>
       </Router>
@@ -79,3 +108,5 @@ const App = () => {
 };
 
 export default App;
+
+

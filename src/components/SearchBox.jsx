@@ -17,7 +17,12 @@ const searchData = [
   { title: "About1", path: "/about1" },
   { title: "Contact1", path: "/contact1" },
   { title: "Help", path: "/help" },
-  { title: "Services1", path: "/services1" },
+  { title: "services1", path: "/services1" },
+  { title: "support", path: "/support" },
+  { title: "settings", path: "/settings" },
+  { title: "notification", path: "/notifications" },
+  { title: "message", path: "/messages" },
+
 ];
 
 const SearchBox = () => {
