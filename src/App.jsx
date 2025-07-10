@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // ✅ Context and Utility Components
 import { ThemeProvider } from "./context/ThemeContext";
 import ThemeToggle from "./components/ThemeToggle";
-import ScrollToTopButton from "./components/scrollToTopButton";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 // ✅ Layout
 import MainLayout from "./layout/MainLayout";
