@@ -31,10 +31,10 @@ import Messages from "./pages/Subpages/Messages";
 import Settings from "./pages/Subpages/Settings";
 import Support from "./pages/Subpages/Support";
 
-import About1 from "./pages/SubPages/About1";
-import Services1 from "./pages/SubPages/Services1";
-import Contact1 from "./pages/SubPages/Contact1";
-import Help from "./pages/SubPages/Help";
+import About1 from "./pages/Subpages/About1";
+import Services1 from "./pages/Subpages/Services1";
+import Contact1 from "./pages/Subpages/Contact1";
+import Help from "./pages/Subpages/Help";
 
 import Search from "./pages/Subpages/Search";
 import ComparisonTable from "./pages/Subpages/ComparisonTable";
